@@ -1,0 +1,41 @@
+a {
+  text-decoration: none !important;
+}
+
+.dialog {
+  display: flex;
+  align-items: center;
+  @include popupBackground('off');
+  z-index: 300;
+  &__widget {
+    max-width: 300px;
+    width: calc(100% - 40px);
+    margin: 0 auto;
+    padding: 15px 20px;
+    border-radius: 15px;
+    background: #fff;
+  }
+  &__title {
+    padding: 0 5px;
+  }
+  &__contents {
+    margin: 8px 0 25px;
+    text-align: center;
+    word-break: keep-all;
+  }
+  &__buttons {
+    text-align: center;
+    button {
+      width: 50%;
+      color:#fff;
+      background-color: #aaa;
+      height: 35px;
+      &.enter {
+        background-color: #26a69a;
+      }
+    }
+  }
+  &--view {
+    @include popupBackground('on');
+  }
+}

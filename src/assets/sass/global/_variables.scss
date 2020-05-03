@@ -1,0 +1,24 @@
+$base-button-height: 40px;
+$base-input-height: 40px;
+$base-border-radius: 10px;
+
+$white: #fff;
+$black: #111;
+
+$grey: #555;
+$grey-light1: #777;
+$grey-light2: #999;
+$grey-light3:#bbb;
+$grey-light4: #ccc;
+$grey-light5: #eee;
+$grey-light6: #f6f6f6;
+$grey-light7: #e6e6e6;
+
+$error-color: #ff382d;
+$base-color: #26a69a;
+
+$point-dark-color: #085d55;
+$point-light-color: #c6e8e5;
+
+$gradient-dark: radial-gradient(circle at top left, $base-color 20%, $point-dark-color);
+$gradient-light: radial-gradient(circle at top left, $point-light-color 20%, $base-color);

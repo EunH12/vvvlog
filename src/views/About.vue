@@ -1,13 +1,58 @@
 <template>
   <div class="about">
     자기소개<br>
-    <button @click="dialogComponenAlert" class="openDialog">DialogComponent / 알럿형태</button><br>
-    <button @click="dialogComponenConfirm" class="openDialog">DialogComponent / 컨펌형태</button><br>
-    <button @click="dialogSlotAlert" class="openDialog">DialogSlot / 알럿형태</button><br>
-    <button @click="dialogSlotConfirm" class="openDialog">DialogComponent / 컨펌형태</button><br>
-    <button @click="dialogStoreAlert" class="openDialog">DialogStore / 알럿형태</button><br>
-    <button @click="dialogStoreConfirm" class="openDialog">DialogStore / 컨펌형태</button><br>
-
+    <click-button
+      text="DialogComponent / 알럿형태"
+      @click="dialogComponenAlert"
+    />
+    <click-button
+      text="DialogComponent / 컨펌형태"
+      background-type="outline"
+      @click="dialogComponenConfirm"
+    />
+    <click-button
+      text="DialogSlot / 알럿형태"
+      background-type="outline error-color"
+      :button-icon-style="{
+        iconType: 'sideIcon',
+        iconName: 'check',
+        iconStyle: 'left'
+      }"
+      @click="dialogSlotAlert"
+    />
+    <click-button
+      @click="dialogSlotConfirm"
+      text="DialogSlot / 컨펌형태"
+      background-type="outline"
+      :button-icon-style="{
+        iconType: 'textIcon',
+        iconName: 'check',
+        iconStyle: 'textEnd'
+      }"
+    />
+    <click-button
+      text="DialogStore / 알럿형태"
+      width="300px"
+      height="50px"
+      @click="dialogStoreAlert"
+    />
+    <click-button
+      text="DialogStore / 컨펌형태"
+      width="300px"
+      height="50px"
+      @click="dialogStoreConfirm"
+      :isSide="true"
+    />
+    <click-button
+      width="35px"
+      height="35px"
+      background-type="base"
+      :button-icon-style="{
+        iconType: 'circle',
+        iconName: 'check',
+        iconSize: 20
+      }"
+    />
     <DialogComponent
       :dialogShow="dialogComponentData.dialogShow"
       :isAlert="dialogComponentData.isAlert"
@@ -130,4 +175,5 @@ export default {
     background: #eee;
     border-radius: 15px;
   }
+  .click-button {margin-bottom: 5px;}
 </style>

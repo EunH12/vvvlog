@@ -17,3 +17,14 @@
     opacity: 1;
   }
 }
+
+@mixin gradient-border($border-size: 1, $type: 'light') {
+  border: ($border-size * 1px) solid transparent;
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  @if $type == 'light' {
+    background-image: linear-gradient(white, white), $gradient-light;
+  } @else {
+    background-image: linear-gradient(white, white), $gradient-dark;
+  }
+}

@@ -57,6 +57,24 @@ const routes = [
         ]
       }
     ]
+  },
+  {
+    path: '/poke',
+    name: 'Poke',
+    component: () => import(/* webpackChunkName: "Poke" */ '@/views/Portfolio/Index.vue'),
+    redirect: 'poke/list',
+    children: [
+      {
+        path: 'list',
+        name: 'Poke_list',
+        component: () => import(/* webpackChunkName: "Poke" */ '@/views/Poke/list.vue')
+      },
+      {
+        path: '2020',
+        name: 'Poke_detail',
+        component: () => import(/* webpackChunkName: "Poke" */ '@/views/Poke/detail.vue')
+      }
+    ]
   }
 ]
 

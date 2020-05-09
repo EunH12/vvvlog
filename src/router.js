@@ -70,7 +70,7 @@ const routes = [
         component: () => import(/* webpackChunkName: "Poke" */ '@/views/Poke/list.vue')
       },
       {
-        path: '2020',
+        path: ':id',
         name: 'Poke_detail',
         component: () => import(/* webpackChunkName: "Poke" */ '@/views/Poke/detail.vue')
       }
@@ -82,6 +82,13 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
+})
+
+router.beforeEach((to, from, next) => {
+  if (from.params.hidden) {
+    to.params.hidden = from.params.hidden
+  }
+  next()
 })
 
 export default router

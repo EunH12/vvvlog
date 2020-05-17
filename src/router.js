@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import Cookies from 'js-cookie'
 
 Vue.use(VueRouter)
 
@@ -13,6 +14,11 @@ const routes = [
     path: '/about',
     name: 'About',
     component: () => import(/* webpackChunkName: "about" */ '@/views/About.vue')
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: () => import(/* webpackChunkName: "about" */ '@/views/Login.vue')
   },
   {
     path: '/portfolio',
@@ -85,10 +91,16 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  if (from.params.hidden) {
-    to.params.hidden = from.params.hidden
+  const loginCheck = Cookies.get('user')
+  if (to.name !== 'Login') {
+    if (loginCheck !== undefined) {
+      next()
+    } else {
+      next({ name: 'Login' })
+    }
+  } else {
+    next()
   }
-  next()
 })
 
 export default router

@@ -14,7 +14,7 @@ Vue.component('ClickButton', ClickButton)
 Vue.component('SvgIcons', SvgIcons)
 
 Vue.config.productionTip = false
-Vue.prototype.$axios = axios
+Vue.prototype.api = axios
 
 new Vue({
   router,

@@ -2,7 +2,6 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router.js'
 import store from './store'
-import vuetify from './plugins/vuetify'
 import ClickButton from '@/components/ClickButton'
 import SvgIcons from '@/components/SvgIcons'
 import axios from 'axios'
@@ -19,6 +18,5 @@ Vue.prototype.api = axios
 new Vue({
   router,
   store,
-  vuetify,
   render: h => h(App)
 }).$mount('#app')

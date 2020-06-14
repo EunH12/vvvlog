@@ -1,11 +1,9 @@
 <template>
-  <v-app>
+  <div>
     <Header />
-    <v-content>
-      <router-view/>
-    </v-content>
+    <router-view/>
     <dialog-popup />
-  </v-app>
+  </div>
 </template>
 
 <script>
